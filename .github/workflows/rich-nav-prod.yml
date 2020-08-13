@@ -1,0 +1,17 @@
+name: "Rich Navigation Indexing"
+on:
+  pull_request:
+  push:
+    branches:
+      - master
+
+jobs:
+  richnav:
+    runs-on: windows-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: microsoft/RichCodeNavIndexer@v0.1
+      with:
+        languages: 'csharp,typescript,java,cpp'
+        environment: 'production'
+      continue-on-error: true
