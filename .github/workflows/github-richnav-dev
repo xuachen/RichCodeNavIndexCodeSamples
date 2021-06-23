@@ -1,0 +1,30 @@
+# This is a basic workflow to help you get started with Actions
+
+name: CI
+
+# Controls when the action will run. 
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - name: Setup Java JDK
+        uses: actions/setup-java@v2.1.0
+        with:
+          java-version: '11'
+          distribution: 'zulu'
+      - uses: actions/checkout@v2
+      - uses: jepetty/debug-action@master
+      - name: Rich Code Nav Indexer
+      - uses: microsoft/RichCodeNavIndexer@v0.1.11
+        with:
+          languages: javascript,cpp,csharp,java
+          environment: development
+        
