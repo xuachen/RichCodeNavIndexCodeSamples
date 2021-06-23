@@ -6,9 +6,9 @@ package com.test.sort;
  */
 public class App 
 {
-    public static void main( String[] args )
+    public static void main(String[] args)
     {
-        System.out.println( "Hello World!" );
+        System.out.println("Hello World!");
     }
 }
 
@@ -18,7 +18,7 @@ public class SomeSort implements SortAlgorithm {
     }
 
     public static void main(String[] args) {
-        SomeSort pancakeSort = new SomeSort();
+        SomeSort pancakeSort = new SomeSort(); // comment
         pancakeSort.sort(arr);
     }
 }

@@ -2,7 +2,7 @@
 
 trigger:
   branches:
-    include: ["master", "*"]
+    include: ["main", "*"]
   paths:
     exclude: ["doc", "*.md"]
 
@@ -11,7 +11,7 @@ schedules:
   displayName: Weekly Development Environment Validation Run
   branches:
     include:
-    - master
+    - main
   always: true
 
 queue:
@@ -30,8 +30,6 @@ steps:
     serviceConnection: 'richCodeNav-Token-Dev'
     languages: 'csharp,typescript,java,cpp'
     githubServiceConnection: 'xuachen'
-    nugetFeed: 'https://devdiv.pkgs.visualstudio.com/Personal/_packaging/richnav/nuget/v3/index.json'
     isPrivateFeed: true
-    nugetVersion: '0.1.1617-alpha'
     environment: development
   continueOnError: true

@@ -2,7 +2,7 @@
 
 trigger:
   branches:
-    include: ["master", "*"]
+    include: ["main", "*"]
   paths:
     exclude: ["doc", "*.md"]
 
@@ -11,7 +11,7 @@ schedules:
   displayName: Weekly Staging Environment Validation Run
   branches:
     include:
-    - master
+    - main
   always: true
 
 queue:

@@ -2,7 +2,7 @@
 
 trigger:
   branches:
-    include: ["master", "*"]
+    include: ["main", "*"]
   paths:
     exclude: ["doc", "*.md"]
 
@@ -11,7 +11,7 @@ schedules:
   displayName: Weekly Production Environment Validation Run
   branches:
     include:
-    - master
+    - main
   always: true
 
 queue:
@@ -19,11 +19,6 @@ queue:
   timeoutInMinutes: 60
 
 steps:
-- task: NodeTool@0
-  displayName: 'Use Node 10.x'
-  inputs:
-    versionSpec: 10.x
-
 - task: MS-RichCodeNav.Indexer.build-task.RichCodeNavIndexer@0
   displayName: Rich Code Navigation Upload to Production
   inputs:

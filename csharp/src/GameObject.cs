@@ -1,5 +1,3 @@
-using System;
-
 namespace game
 {
     class GameObject: Drawable, Interactive
